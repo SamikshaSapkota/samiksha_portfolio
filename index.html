@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Samiksha Sapkota — Civil Engineer | Structural Design & Seismic Analysis, Nepal</title>
+  <meta name="description" content="Samiksha Sapkota is a Civil Engineer from Kathmandu, Nepal, specialising in structural analysis, seismic design, ETABS modelling, and architectural drafting. Currently open to engineering opportunities.">
+  <meta name="keywords" content="Samiksha Sapkota, Civil Engineer Nepal, structural engineer Kathmandu, seismic design Nepal, ETABS engineer, AutoCAD drafter, IOE TU engineer, architectural drafter Nepal">
+  <meta name="author" content="Samiksha Sapkota">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://samiksha-sapkota.com.np/">
+
+  <!-- ═══ OPEN GRAPH (Facebook, LinkedIn previews) ═══ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://samiksha-sapkota.com.np/">
+  <meta property="og:title"       content="Samiksha Sapkota — Civil Engineer | Nepal">
+  <meta property="og:description" content="Civil Engineer specialising in structural analysis, seismic design, and architectural drafting. Based in Kathmandu, Nepal. Open to opportunities.">
+  <meta property="og:image"       content="https://samiksha-sapkota.com.np/assests/card.png">
+  <meta property="og:locale"      content="en_GB">
+  <meta property="og:site_name"   content="Samiksha Sapkota Portfolio">
+
+  <!-- ═══ TWITTER / X CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Samiksha Sapkota — Civil Engineer | Nepal">
+  <meta name="twitter:description" content="Civil Engineer specialising in structural analysis, seismic design, and architectural drafting. Based in Kathmandu, Nepal.">
+  <meta name="twitter:image"       content="https://samiksha-sapkota.com.np/assests/card.png">
+
+  <!-- ═══ STRUCTURED DATA — Person + ProfilePage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://samiksha-sapkota.com.np/#person",
+        "name": "Samiksha Sapkota",
+        "jobTitle": "Civil Engineer",
+        "description": "Civil Engineer from Kathmandu, Nepal, specialising in structural analysis, seismic design, and architectural drafting.",
+        "url": "https://samiksha-sapkota.com.np/",
+        "image": "https://samiksha-sapkota.com.np/assests/card.png",
+        "email": "samikshasapkota070@gmail.com",
+        "telephone": "+977986453230",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kathmandu",
+          "addressRegion": "Bagmati",
+          "addressCountry": "NP"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Sagarmatha Engineering College, IOE Tribhuvan University"
+        },
+        "knowsAbout": ["Structural Analysis", "Seismic Design", "AutoCAD", "ETABS", "SAFE", "Architectural Drafting"],
+        "sameAs": [
+          "https://www.linkedin.com/in/samiksha-sapkota-852887360/",
+          "https://www.facebook.com/profile.php?id=61587840031252",
+          "https://www.instagram.com/_kritisapkota/"
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://samiksha-sapkota.com.np/#webpage",
+        "url": "https://samiksha-sapkota.com.np/",
+        "name": "Samiksha Sapkota — Civil Engineer Portfolio",
+        "about": { "@id": "https://samiksha-sapkota.com.np/#person" },
+        "dateModified": "2026-04-01"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ FONTS & ICONS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- LAYERS -->
+<div id="grid-layer" aria-hidden="true"></div>
+<div id="noise-layer" aria-hidden="true"></div>
+<canvas id="pcvs" aria-hidden="true"></canvas>
+<div id="spb" role="progressbar" aria-label="Scroll progress"></div>
+<div id="cur" aria-hidden="true"></div>
+<div id="cur-r" aria-hidden="true"></div>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#home" class="logo"><b>S</b>amiksha <span style="font-style:italic;color:var(--gold)">Sapkota</span></a>
+  <ul class="nav-ul" id="nul">
+    <li><a href="#about"      data-s="about">About</a></li>
+    <li><a href="#experience" data-s="experience">Experience</a></li>
+    <li><a href="#skills"     data-s="skills">Skills</a></li>
+    <li><a href="#projects"   data-s="projects">Projects</a></li>
+    <li><a href="#resume"     data-s="resume">Resume</a></li>
+    <li><a href="#contact"    class="nav-cta" data-s="contact">Contact</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle light/dark mode">
+      <div class="toggle-knob" id="toggleKnob">
+        <i class="fas fa-moon ti-moon"></i>
+      </div>
+    </button>
+    <button class="hamburger" id="hbg" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="home" aria-label="Hero section">
+  <div class="blob" id="b1"></div>
+  <div class="blob" id="b2"></div>
+  <div class="blob" id="b3"></div>
+  <span class="petal" style="width:14px;height:14px;background:#f9a8c0;left:12%;bottom:-20px;animation-duration:14s;animation-delay:0s"></span>
+  <span class="petal" style="width:10px;height:10px;background:#f472a0;left:28%;bottom:-20px;animation-duration:11s;animation-delay:2s"></span>
+  <span class="petal" style="width:18px;height:18px;background:#fce7ef;left:55%;bottom:-20px;animation-duration:16s;animation-delay:4s"></span>
+  <span class="petal" style="width:12px;height:12px;background:#f9a8c0;left:72%;bottom:-20px;animation-duration:13s;animation-delay:1s"></span>
+  <span class="petal" style="width:9px;height:9px;background:#f472a0;left:88%;bottom:-20px;animation-duration:10s;animation-delay:3s"></span>
+  <div class="hero-ghost" aria-hidden="true">CE</div>
+  <div class="hero-coords" aria-label="Location: Kathmandu, Nepal">27.7172° N &nbsp;85.3240° E<br>Kathmandu · Nepal<br>Civil Engineer</div>
+
+  <div class="hero-col" id="hcol">
+    <div class="htag"><span class="pdot" aria-hidden="true"></span> Available for opportunities</div>
+    <h1 class="hname" id="hname">Samiksha<br><em>Sapkota</em></h1>
+    <div class="htw"><span class="tw-p" aria-hidden="true">$&gt;&nbsp;</span><span id="tw" aria-live="polite" aria-label="Role typewriter"></span></div>
+    <p class="hbio">A passionate Civil Engineer with expertise in structural design and seismic analysis. Blending technical precision with creative vision to build infrastructure that stands resilient — for communities that matter.</p>
+    <div class="hact">
+      <a href="#projects" class="btn-g"><span>View Projects →</span></a>
+      <a href="#contact"  class="btn-o">Get in Touch</a>
+      <a href="resume.pdf" class="btn-o" download style="gap:.5rem"><i class="fas fa-download" style="font-size:.7rem"></i>Download CV</a>
+    </div>
+  </div>
+
+  <div class="hero-vis">
+    <div class="arch tilt" id="hcard">
+      <div class="pring" aria-hidden="true"></div>
+      <div class="pshell">
+        <img src="assests/samiksha.png" alt="Portrait photograph of Samiksha Sapkota, Civil Engineer">
+        <div class="shimmer" aria-hidden="true"></div>
+        <span class="co tl" aria-hidden="true"></span><span class="co tr" aria-hidden="true"></span>
+        <span class="co bl" aria-hidden="true"></span><span class="co br" aria-hidden="true"></span>
+      </div>
+      <div class="sbadge lft"><div class="bdeg">Degree</div><div class="bval">B.E. Civil</div></div>
+      <div class="sbadge rgt">
+        <div class="sc"><div class="sk">University</div><div class="sv">IOE / TU</div></div>
+        <div class="sc"><div class="sk">Speciality</div><div class="sv">Structural</div></div>
+        <div class="sc"><div class="sk">Location</div><div class="sv">Kathmandu</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scue" aria-hidden="true"><div class="smouse"><div class="swheel"></div></div><span class="slabel">Scroll to explore</span></div>
+</section>
+
+<!-- ════════ MARQUEE ════════ -->
+<div class="mband" aria-hidden="true">
+  <div class="mtrack">
+    <span class="mi">Structural Analysis <span class="ms">✦</span></span>
+    <span class="mi">Seismic Design <span class="ms">✦</span></span>
+    <span class="mi">AutoCAD <span class="ms">✦</span></span>
+    <span class="mi">ETABS <span class="ms">✦</span></span>
+    <span class="mi">SAFE <span class="ms">✦</span></span>
+    <span class="mi">Architectural Drafting <span class="ms">✦</span></span>
+    <span class="mi">Civil Engineering <span class="ms">✦</span></span>
+    <span class="mi">IOE · TU <span class="ms">✦</span></span>
+    <span class="mi">Kathmandu, Nepal <span class="ms">✦</span></span>
+    <span class="mi">Structural Analysis <span class="ms">✦</span></span>
+    <span class="mi">Seismic Design <span class="ms">✦</span></span>
+    <span class="mi">AutoCAD <span class="ms">✦</span></span>
+    <span class="mi">ETABS <span class="ms">✦</span></span>
+    <span class="mi">SAFE <span class="ms">✦</span></span>
+    <span class="mi">Architectural Drafting <span class="ms">✦</span></span>
+    <span class="mi">Civil Engineering <span class="ms">✦</span></span>
+    <span class="mi">IOE · TU <span class="ms">✦</span></span>
+    <span class="mi">Kathmandu, Nepal <span class="ms">✦</span></span>
+  </div>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
+<section class="about" id="about" aria-label="About Samiksha Sapkota">
+  <div class="afloat plx" data-spd="0.06" aria-hidden="true"></div>
+  <div class="ag">
+    <div class="atxt rv-l">
+      <div class="eyebrow">About Me</div>
+      <h2 class="sec-title">Building with purpose,<br><em>designing with heart</em></h2>
+      <p>I am a passionate Civil Engineer graduating from <strong>Sagarmatha Engineering College</strong>, affiliated to the Institute of Engineering (IOE), Tribhuvan University. My studies have equipped me with strong expertise in structural analysis, seismic design, and engineering software.</p>
+      <p>My final year project on <strong>Seismic Resistance Analysis and Design of a Multistorey Educational Building</strong> reflects my dedication to safe and resilient infrastructure for communities in earthquake-prone regions like Nepal.</p>
+      <p>Currently working as an <strong>Architectural Drafter at YARD Architecture Design</strong>, I bring technical drawings to life and collaborate with senior architects and engineers to deliver precise, code-compliant designs.</p>
+      <div class="adet">
+        <div class="dc"><div class="dk">Location</div><div class="dv">Manamaiju, Kathmandu</div></div>
+        <div class="dc"><div class="dk">Email</div><div class="dv">samikshasapkota070@gmail.com</div></div>
+        <div class="dc"><div class="dk">Phone</div><div class="dv">+977 986 453 2303</div></div>
+        <div class="dc"><div class="dk">Status</div><div class="dv" style="color:var(--gold)">Open to opportunities</div></div>
+      </div>
+    </div>
+    <div class="rv-r" style="transition-delay:.14s">
+      <p class="ptit">What I bring to the table</p>
+      <div class="pl"><span class="pn">01</span><div><div class="pt">Structural Analysis</div><div class="pd">Skilled in seismic resistance analysis and design using ETABS and SAFE, ensuring buildings are safe and code-compliant.</div></div></div>
+      <div class="pl"><span class="pn">02</span><div><div class="pt">Architectural Drafting</div><div class="pd">Experienced in producing precise 2D floor plans, sections, elevations, and structural drawings using AutoCAD.</div></div></div>
+      <div class="pl"><span class="pn">03</span><div><div class="pt">Technical Documentation</div><div class="pd">Strong documentation, data interpretation, and report writing abilities honed through academic and professional work.</div></div></div>
+      <div class="pl"><span class="pn">04</span><div><div class="pt">Collaborative Spirit</div><div class="pd">Excellent communication and leadership skills with effective teamwork in multi-disciplinary engineering environments.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STATS ════════ -->
+<div class="sband" aria-label="Career statistics">
+  <div class="sg">
+    <div class="si rv"><span class="sn" data-t="3">0</span><span class="sl">Major Projects</span></div>
+    <div class="si rv" style="transition-delay:.1s"><span class="sn" data-t="8">0</span><span class="sl">Tools Mastered</span></div>
+    <div class="si rv" style="transition-delay:.2s"><span class="sn" data-t="4">0</span><span class="sl">Years of Study</span></div>
+    <div class="si rv" style="transition-delay:.3s"><span class="sn" data-t="2">0</span><span class="sl">Roles Held</span></div>
+  </div>
+</div>
+
+<!-- ════════ EXPERIENCE ════════ -->
+<section class="experience" id="experience" aria-label="Work experience">
+  <div class="rv">
+    <div class="eyebrow">Career</div>
+    <h2 class="sec-title">Work <em>Experience</em></h2>
+  </div>
+  <div class="timeline rv" style="transition-delay:.15s">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">December 2025 — Present</div>
+      <div class="tl-role">Architectural Drafter</div>
+      <div class="tl-company">YARD Architecture Design · Chamati Bishnumati, Kathmandu</div>
+      <div class="tl-desc">Preparing detailed architectural and structural drawings for residential and commercial projects. Coordinating with senior architects and engineers to ensure compliance with local building codes. Maintaining drawing registers and supporting project documentation and client submissions.</div>
+      <div class="tl-tags">
+        <span class="ttag">AutoCAD</span>
+        <span class="ttag">Architectural Drawing</span>
+        <span class="ttag">Documentation</span>
+        <span class="ttag">Building Codes</span>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">May 2025 — July 2025</div>
+      <div class="tl-role">Engineering Intern</div>
+      <div class="tl-company">YARD Architecture Design · Chamati Bishnumati, Kathmandu</div>
+      <div class="tl-desc">Supported the drafting team in producing 2D floor plans, sections, and elevation drawings. Performed topographic and engineering surveys, conducted desk studies for site analysis, and compiled structured technical reports. Gained hands-on exposure to ETABS structural modelling and SAFE foundation design.</div>
+      <div class="tl-tags">
+        <span class="ttag">ETABS</span>
+        <span class="ttag">SAFE</span>
+        <span class="ttag">Surveying</span>
+        <span class="ttag">Report Writing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ SKILLS ════════ -->
+<section class="skills" id="skills" aria-label="Skills and tools">
+  <div class="sfloat1 plx" data-spd="0.07" aria-hidden="true"></div>
+  <div class="sfloat2 plx" data-spd="0.05" aria-hidden="true"></div>
+
+  <div class="sk-top rv">
+    <div>
+      <div class="eyebrow">Expertise</div>
+      <h2 class="sec-title" style="margin-bottom:0">Tools &amp; <em>Skills</em></h2>
+    </div>
+    <p class="sk-note">A blend of engineering software, analytical tools, and technical competencies built through rigorous academic and professional work.</p>
+  </div>
+
+  <div class="sk-tabs rv" style="transition-delay:.1s" role="tablist" aria-label="Skills view options">
+    <button class="skt on" data-tab="grid"  role="tab" aria-selected="true"  aria-controls="gv">Grid View</button>
+    <button class="skt"    data-tab="bars"  role="tab" aria-selected="false" aria-controls="bv">Progress Bars</button>
+    <button class="skt"    data-tab="radar" role="tab" aria-selected="false" aria-controls="rv2">Radar Chart</button>
+  </div>
+
+  <!-- GRID -->
+  <div id="gv" class="rv" style="transition-delay:.2s" role="tabpanel" aria-labelledby="tab-grid">
+    <div class="stile"><img src="https://img.icons8.com/color/48/autocad.png"                class="sic"     alt="AutoCAD"><span class="stn">AutoCAD</span></div>
+    <div class="stile"><img src="assests/etabs.png"                                                  class="sic inv" alt="ETABS"><span class="stn">ETABS</span></div>
+    <div class="stile"><img src="assests/safe.png"                                                   class="sic inv" alt="SAFE"><span class="stn">SAFE</span></div>
+    <div class="stile"><img src="https://img.icons8.com/color/48/microsoft-office-2019.png"  class="sic"     alt="MS Office"><span class="stn">MS Office</span></div>
+    <div class="stile"><i class="fas fa-drafting-compass sifa" aria-hidden="true"></i><span class="stn">Surveying</span></div>
+    <div class="stile"><i class="fas fa-calculator sifa" aria-hidden="true"></i><span class="stn">Struct. Calc</span></div>
+    <div class="stile"><i class="fas fa-file-alt sifa" aria-hidden="true"></i><span class="stn">Reporting</span></div>
+  </div>
+
+  <!-- BARS -->
+  <div id="bv" role="tabpanel" aria-labelledby="tab-bars" aria-hidden="true">
+    <div class="br"><span class="bl">AutoCAD</span>    <div class="bt"><div class="bf" data-p="90"></div></div><span class="bp">90%</span></div>
+    <div class="br"><span class="bl">ETABS</span>      <div class="bt"><div class="bf" data-p="85"></div></div><span class="bp">85%</span></div>
+    <div class="br"><span class="bl">SAFE</span>       <div class="bt"><div class="bf" data-p="80"></div></div><span class="bp">80%</span></div>
+    <div class="br"><span class="bl">MS Office</span>  <div class="bt"><div class="bf" data-p="88"></div></div><span class="bp">88%</span></div>
+    <div class="br"><span class="bl">Surveying</span>  <div class="bt"><div class="bf" data-p="82"></div></div><span class="bp">82%</span></div>
+    <div class="br"><span class="bl">Struct. Calc</span><div class="bt"><div class="bf" data-p="87"></div></div><span class="bp">87%</span></div>
+    <div class="br"><span class="bl">Reporting</span>  <div class="bt"><div class="bf" data-p="92"></div></div><span class="bp">92%</span></div>
+  </div>
+
+  <!-- RADAR -->
+  <div id="rv2" role="tabpanel" aria-labelledby="tab-radar" aria-hidden="true">
+    <canvas id="rc" width="440" height="440" aria-label="Skills radar chart showing proficiency levels for AutoCAD, ETABS, SAFE, MS Office, Surveying, Structural Calculations, and Reporting"></canvas>
+    <div class="radar-legend" aria-hidden="true">
+      <span class="rl">AutoCAD</span><span class="rl">ETABS</span><span class="rl">SAFE</span>
+      <span class="rl">MS Office</span><span class="rl">Surveying</span>
+      <span class="rl">Struct. Calc</span><span class="rl">Reporting</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROJECTS ════════ -->
+<section class="projects" id="projects" aria-label="Selected projects">
+  <div class="pfloat plx" data-spd="0.08" aria-hidden="true"></div>
+  <div class="ph rv">
+    <div><div class="eyebrow">Portfolio</div><h2 class="sec-title" style="margin-bottom:0">Selected <em>Projects</em></h2></div>
+  </div>
+  <div class="pg">
+    <article class="pc rv">
+      <div class="pcg" aria-hidden="true"></div>
+      <div class="pct"><div class="pn2" aria-hidden="true">01</div><h3 class="ptitle">Seismic Resistance Analysis of a Multistorey Educational Building</h3></div>
+      <div class="pcb"><p class="pdesc">Final year project — comprehensive structural analysis and design of a multi-storey school building for earthquake-prone zones in Nepal, supervised by Prof. Er. Arun Paudel at Sagarmatha Engineering College.</p><div class="ptags"><span class="ptag">ETABS</span><span class="ptag">Seismic Design</span><span class="ptag">Structural</span><span class="ptag">NBC Code</span></div></div>
+    </article>
+    <article class="pc rv" style="transition-delay:.12s">
+      <div class="pcg" aria-hidden="true"></div>
+      <div class="pct"><div class="pn2" aria-hidden="true">02</div><h3 class="ptitle">Structural Design of a G+3 Residential Building</h3></div>
+      <div class="pcb"><p class="pdesc">Designed and modelled a G+3 residential building for seismic zones using AutoCAD for drafting and ETABS for structural analysis, load calculations, and member design.</p><div class="ptags"><span class="ptag">AutoCAD</span><span class="ptag">ETABS</span><span class="ptag">Residential</span><span class="ptag">Load Analysis</span></div></div>
+    </article>
+    <article class="pc rv" style="transition-delay:.24s">
+      <div class="pcg" aria-hidden="true"></div>
+      <div class="pct"><div class="pn2" aria-hidden="true">03</div><h3 class="ptitle">Water Supply Network Planning</h3></div>
+      <div class="pcb"><p class="pdesc">Planned a municipal-scale water supply system using EPANET for efficient distribution, covering demand analysis, pipe network layout, and hydraulic modelling for a community setting.</p><div class="ptags"><span class="ptag">EPANET</span><span class="ptag">Hydraulics</span><span class="ptag">Municipal</span><span class="ptag">Network Design</span></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- ════════ RESUME ════════ -->
+<section class="resume" id="resume" aria-label="Resume download">
+  <div class="rv"><div class="eyebrow">Resume</div><h2 class="sec-title">Download my <em>CV</em></h2></div>
+  <div class="rc2 rv" style="transition-delay:.18s">
+    <div style="position:relative;z-index:1">
+      <div class="rm">
+        <div><div class="rmk">Last Updated</div><div class="rmv">April 2026</div></div>
+        <div><div class="rmk">Format</div><div class="rmv">PDF / DOCX</div></div>
+        <div><div class="rmk">Field</div><div class="rmv">Civil Engineering</div></div>
+        <div><div class="rmk">Experience</div><div class="rmv">Entry Level</div></div>
+      </div>
+      <p class="rtxt">My CV includes my full academic background, professional experience, certifications, and technical skills in structural analysis, seismic design, and architectural drafting.</p>
+    </div>
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start">
+      <a href="resume.pdf" class="btn-g" download aria-label="Download Samiksha Sapkota CV as PDF"><span>Download CV &nbsp;↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section class="contact" id="contact" aria-label="Contact Samiksha Sapkota">
+  <div class="cg">
+    <div class="rv-l">
+      <div class="eyebrow">Contact</div>
+      <h2 class="sec-title">Let's build<br><em>something together</em></h2>
+      <p class="clead">Whether it's a collaboration, a project enquiry, or just to say hello — I'd love to hear from you.</p>
+      <div class="cits">
+        <div class="cit"><div class="cion"><i class="fas fa-envelope" aria-hidden="true"></i></div><a href="mailto:samikshasapkota070@gmail.com">samikshasapkota070@gmail.com</a></div>
+        <div class="cit"><div class="cion"><i class="fas fa-phone" aria-hidden="true"></i></div>+977 986 453 2303</div>
+        <div class="cit"><div class="cion"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>Manamaiju, Kathmandu, Nepal</div>
+        <div class="cit"><div class="cion"><i class="fas fa-globe" aria-hidden="true"></i></div><a href="https://samiksha-sapkota.com.np" target="_blank" rel="noopener">samiksha-sapkota.com.np</a></div>
+      </div>
+      <div class="socs">
+        <a href="https://www.instagram.com/_kritisapkota/"                        target="_blank" rel="noopener" class="sob" aria-label="Samiksha Sapkota on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61587840031252"          target="_blank" rel="noopener" class="sob" aria-label="Samiksha Sapkota on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/samiksha-sapkota-852887360/"         target="_blank" rel="noopener" class="sob" aria-label="Samiksha Sapkota on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM — with inline validation -->
+    <form class="cform rv-r" id="contactForm" style="transition-delay:.18s" novalidate aria-label="Contact form">
+      <div class="fr">
+        <div class="fg">
+          <label for="fn">Your Name <span class="req" aria-hidden="true">*</span></label>
+          <input id="fn" name="from_name" type="text" placeholder="Jane Doe" required autocomplete="name" aria-describedby="fn-err">
+          <span class="field-err" id="fn-err" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="fg">
+          <label for="fe">Email Address <span class="req" aria-hidden="true">*</span></label>
+          <input id="fe" name="from_email" type="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="fe-err">
+          <span class="field-err" id="fe-err" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="fs">Subject</label>
+        <input id="fs" name="subject" type="text" placeholder="Project enquiry, collaboration…" autocomplete="off">
+      </div>
+      <div class="fg">
+        <label for="fmsg">Message <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="fmsg" name="message" placeholder="Tell me about your project…" required aria-describedby="fmsg-err"></textarea>
+        <span class="field-err" id="fmsg-err" role="alert" aria-live="polite"></span>
+      </div>
+      <button type="submit" class="btn-g" id="sendBtn" style="border:none;width:fit-content" aria-label="Send message"><span>Send Message →</span></button>
+      <div class="fsuc" id="fsuc" role="status" aria-live="polite">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+      <div class="ferr" id="ferr" role="alert" aria-live="assertive">✗ &nbsp;Something went wrong. Please try again or email directly.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="flogo">Samiksha Sapkota</span>
+  <span>© 2026 Samiksha Sapkota · All rights reserved</span>
+  <span>Built with <span class="fheart">♡</span></span>
+</footer>
+
+<button id="btt" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
