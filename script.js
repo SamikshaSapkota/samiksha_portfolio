@@ -1,3 +1,36 @@
+/* ─── PRELOADER ─── */
+(function () {
+  // Hide everything except the preloader while loading
+  document.body.classList.add('pl-loading');
+
+  function dismissPreloader() {
+    const pl = document.getElementById('preloader');
+    if (!pl) return;
+
+    // Reveal page content first (invisible → visible)
+    document.body.classList.remove('pl-loading');
+
+    // Then wipe the preloader upward
+    pl.classList.add('pl-exit');
+    pl.addEventListener('animationend', () => {
+      pl.classList.add('pl-done');
+    }, { once: true });
+  }
+
+  // Minimum display time (ms) so it never just flashes
+  const MIN_TIME = 2000;
+  const start = Date.now();
+
+  window.addEventListener('load', () => {
+    const elapsed = Date.now() - start;
+    const remaining = Math.max(0, MIN_TIME - elapsed);
+    setTimeout(dismissPreloader, remaining);
+  });
+
+  // Safety fallback — dismiss after 4s no matter what
+  setTimeout(dismissPreloader, 4000);
+})();
+
 /* ─── UTILS ─── */
 const $  = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);

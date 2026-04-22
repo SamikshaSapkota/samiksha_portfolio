@@ -443,7 +443,127 @@
     .timeline{padding-left:1.8rem}
   }
 
-/* ── Required field star ── */
+
+/* ━━━ PRELOADER ━━━ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+.pl-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transition: background .45s ease;
+}
+
+/* subtle blueprint grid — same as the main site */
+.pl-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 1;
+}
+
+.pl-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: plFadeIn .7s ease .15s forwards;
+}
+
+@keyframes plFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pl-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  font-family: var(--fd);
+  gap: .15rem;
+}
+
+.pl-first {
+  font-size: clamp(2.6rem, 8vw, 5.2rem);
+  font-weight: 300;
+  letter-spacing: .18em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.pl-last {
+  font-size: clamp(2.8rem, 8.5vw, 5.6rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: .06em;
+}
+
+.pl-title {
+  font-family: var(--fm);
+  font-size: clamp(.55rem, 1.6vw, .72rem);
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+
+.pl-bar-wrap {
+  width: clamp(120px, 28vw, 200px);
+  height: 1px;
+  background: var(--border2);
+  margin-top: .8rem;
+  overflow: hidden;
+}
+
+.pl-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  animation: plLoad 1.6s cubic-bezier(.4,0,.2,1) .3s forwards;
+}
+
+@keyframes plLoad {
+  0%   { width: 0%; }
+  60%  { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* exit: wipe upward */
+#preloader.pl-exit {
+  animation: plWipe .72s cubic-bezier(.76,0,.24,1) forwards;
+}
+
+@keyframes plWipe {
+  0%   { transform: translateY(0);     opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 1; }
+}
+
+#preloader.pl-done {
+  display: none;
+}
+
+/* keep body hidden until preloader is gone */
+body.pl-loading > *:not(#preloader) {
+  visibility: hidden;
+}
+
 .req {
   color: var(--gold);
   margin-left: 2px;
