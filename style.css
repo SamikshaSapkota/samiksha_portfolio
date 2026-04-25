@@ -192,9 +192,9 @@
   #b3{width:300px;height:300px;background:radial-gradient(circle,rgba(100,140,255,.05),transparent 70%);top:35%;left:40%;animation:bfloat 13s ease-in-out infinite reverse}
   @keyframes bfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-45px)}}
 
-  .hero-coords{position:absolute;top:136px;left:6%;font-family:var(--fm);font-size:.58rem;color:var(--muted2);letter-spacing:.14em;line-height:1.9;opacity:0;animation:riseUp .8s 1.7s ease forwards}
+  .hero-coords{display:block;font-family:var(--fm);font-size:.58rem;color:var(--muted2);letter-spacing:.14em;line-height:1.9;margin-bottom:1.5rem;opacity:0;animation:riseUp .8s 1.7s ease forwards}
   .hero-ghost{position:absolute;bottom:-2rem;right:-1rem;font-family:var(--fd);font-size:clamp(9rem,18vw,22rem);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(201,169,110,.05);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em}
-  .hero-col{position:relative;z-index:4;padding:9rem 0 6rem}
+  .hero-col{position:relative;z-index:4;padding:7rem 0 6rem}
   .htag{display:inline-flex;align-items:center;gap:.65rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;opacity:0;animation:riseUp .8s .15s ease forwards}
   .pdot{width:8px;height:8px;background:var(--gold);border-radius:50%;position:relative;display:inline-block;flex-shrink:0}
   .pdot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);animation:pulse 2.1s ease-out infinite}
